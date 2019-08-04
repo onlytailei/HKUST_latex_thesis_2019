@@ -8,6 +8,7 @@ The main revision on privious repo, like [Cheedoong/hkust-latex-thesis](https://
 Please choose your degree (PhD/MPhill) and uncomment the coadvisor line, if you have a coadvisor, in [main.tex](main.tex).
 
 To compile the thesis:
+
     make .
 
 
