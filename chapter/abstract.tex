@@ -1,0 +1,12 @@
+\begin{abstract}
+
+  Compared to known and static environments, mobile robot navigation within dynamic, pedestrian-rich and unfamiliar environments is still challenging. To model these scenarios through traditional hand-crafted features is not efficient and effective enough. Deep learning has achieved state-of-the-art results in various fields of study, especially in complex task modelling, in the last several years.
+  Sensorimotor learning has also shown great potential to solve many complicated manipulation tasks. However, the potential exploration of deep learning in robot sensorimotor policies, especially for mobile robot navigation is still limited.
+
+  % Additionally, practical applications of traditional robot control and the policy search pipeline often require hand-engineered components for perception, state estimation, and low-level control. For example, in robot navigation, a geometrical map needs to be predefined. After that, the path and trajectory are planned on the map. Finally, the robot outputs the related actions to actuators based on low-level controllers.
+  % Traditionally, consistently optimizing the uncertainties generated from each part is unrealistic. Deep learning, especially deep reinforcement learning and imitation learning, provide possible solutions for this problem.
+
+  In this thesis, we are targeting to leverage fully differentiable structures to realize end-to-end sensorimotor learning for ground mobile robot navigation. We aim to answer the following questions:
+  (1) How do we learn the sensorimotor policy for mobile robot navigation? And (2) how should we deploy it in the real world considering the reality gap and uncertainties? For question (1), we proposed two structures for sensorimotor learning through both deep reinforcement learning and inverse imitation learning. For the second question, we propose \textit{shift loss} to constraint the sequence input domain adaptation and combine it with a generative adversarial network to translate the real-world image streams back to the synthetic domain during the deployment phase. The uncertainties of deep learning are also considered to learn a stochastic policy. By conducting a series of experiments, both in simulated and real-world environments, we show how these learned sensorimotor models can be successfully applied in both indoor and outdoor mobile robot navigation scenarios.
+
+\end{abstract}

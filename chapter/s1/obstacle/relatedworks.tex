@@ -1,0 +1,30 @@
+%#######################################################
+%------------------------realted work--------------------------
+
+\section{Related work}
+\label{sec:ob_rel}
+
+Conventional obstacle avoidance strategies mainly depend on hand-crafted features extracted from environments \cite{kuipers1991robot}.
+Benefiting from the development of large-scale computing hardware like GPUs, deep learning related methods have been considered to address robotics problems, including obstacle avoidance.
+
+\subsection{Deep Learning in Robotics Obstacle Avoidance}
+CNN has been applied to recognize off-road obstacles \cite{muller2005off} by taking stereo images as input. It also helps aerial robots to navigate along forest trails with a single monocular camera \cite{giusti2016machine}. In \cite{tai2016deep}, a three-layer convolutional framework was used to perceive an indoor corridor environment for mobile robots. By taking raw images or depth images as inputs, and taking the moving commands or steering angles as outputs, the weights of CNN-based models could be trained through back-propagation and stochastic gradient descent.
+
+Note that the supervised learning methods mentioned above require a large amount of effort for collecting and labelling of datasets. Kim \textit{et al}. \cite{kim2006traversability} achieved the labelling result by using other sensors with higher resolution. Tao \textit{et al}. \cite{tao2015semi} labelled the centre sample of the clustering result for object classification as a semi-supervised method. Considering the requirement for auxiliary judgments, unsupervised learning methods do not eliminate the labelling work essentially.
+
+Deep learning in raw image processing has shown significant potential to solve visual-based robot control problems.
+However, even though CNN related methods have accomplished many breakthroughs and challenging benchmarks for vision perception tasks like object detection and image recognition, applications in robotics control are still limited.
+
+\subsection{Reinforcement Learning in Robotics}
+
+Reinforcement learning is a useful way for robots to learn control policies. The main advantage of reinforcement learning is the completed independence from human-labelling. Motivated by the trial-and-error interaction with the environment, the estimation of the action-value function is self-driven by taking the robot states as the input of the model. Conventional reinforcement learning methods improved the controller performances in path-planning of robot-arms \cite{xie2015model} and control of helicopters \cite{ng2006autonomous}.
+
+Through regarding RGB or RGB-D images as the states of robots, reinforcement learning can be directly used to achieve visual control policies. In our previous work \cite{tl_rcar_2016}, a Q-learning based reinforcement learning controller was used to help a \textit{Turtlebot} navigate in the simulation environment.
+
+\subsection{Deep Reinforcement Learning}
+
+Due to the potential of automating the design of data representations, deep reinforcement learning has attracted considerable attention recently \cite{duan2016benchmarking}. Deep reinforcement learning was firstly applied on playing 2600 Atari games \cite{mnih2015human}, where the typical model-free Q-learning method was combined with convolutional feature extraction structures as a Deep Q-network (DQN). The learned policies beat human players and previous algorithms in most of the Atari games. Based on the success of DQN \cite{mnih2015human}, revised deep reinforcement learning methods appeared to improve the performance for various applications. Different to DQN, which takes three continuous images as input, DRQN \cite{hausknecht2015deep} replaces several regular convolutional layers with recurrent neural network (RNN) and long short term memory (LSTM) layers. Taking only one frame as the input, the trained model performed as well as DQN in Atari games. Duelling network \cite{wang2015dueling} separated the Q-value estimator into two independent network structures, one for the state value function and one for the advantage function. Now, it is the state-of-art method on the Atari 2600 domain.
+
+For robotics control, deep reinforcement learning has also accomplished various simulated robotics control tasks \cite{lillicrap2015continuous}. In the continuous control domain \cite{gu2016continuous}, the same model-free algorithm robustly solved more than 20 simulated physics tasks. Control policies are learned directly from raw pixel inputs. Considering the complexity of control problems, a model-based reinforcement learning algorithm was proved to be able to accelerate the learning procedure in \cite{lillicrap2015continuous} so that the deep reinforcement learning framework could handle more challenging problems.
+
+No matter whether in Atari games or the control tasks mentioned above, deep reinforcement learning has been showing its advantages in simulated environments. However, it is rarely used to address robotics problems in real-world environments. As in \cite{zhang2015towards}, the motion control of a \textit{Baxter} robot motivated by deep reinforcement learning could make sense only with simulated semantic images but not raw images taken by real cameras. Thus, we consider the feasibility of deep reinforcement learning in real-world tasks to be the primary contribution of our work.

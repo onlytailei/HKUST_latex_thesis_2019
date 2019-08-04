@@ -1,0 +1,25 @@
+\section{Deep Learning for Robotics: From Perception to Control}
+Autonomous intelligent robotics systems require two essential building blocks: perception and control.
+
+The perception pipeline can be viewed as a passive procedure:
+intelligent agents receive observations from the environment,
+then infer desired properties or detect target quantities from those sensory inputs.
+We refer readers to \cite{deng2014tutorial} and \cite{guo2016deep} for a comprehensive overview of deep learning techniques for perception.
+Compared with pure perception, the problem of control for autonomous agents goes one step further,
+seeking to actively interact with or influence the environment by conducting sequences of actions.
+This active nature leads to the following major distinctions between perception and control, in terms of deep-learning-based approaches:
+
+\textbf{Data distribution:} When learning perception through supervised learning techniques,
+the training datasets are collected and labelled before the learning phase begins.
+In this case, the data points can be viewed as being independently and identically distributed (i.i.d),
+such that a direct mapping from the input to the labels can be learned via standard stochastic gradient descent methods and variants.
+In contrast, for control, the datasets are collected in an on-line manner, which makes the data points sequential in nature: the consecutive observations received by the agent are temporally correlated since the agent actively influences the data distribution by the actions it takes. Ignoring this underlying temporal correlation would lead to compounding errors \cite{bagnell2015invitation}.
+
+\textbf{Supervision signal:} The supervision for learning perception is often direct and strong,
+in that each training sample is provided along with its ground truth label.
+In control tasks, on the other hand, either only sparse reward signals are available when learning behaviors through \textit{deep reinforcement learning} and \textit{inverse reinforcement learning},
+or the feedback is often delayed and not instantaneous,
+even when demonstrations from experts are provided in the scenario of \textit{imitation learning},
+since the credit for achieving a certain goal needs to be correctly assigned to all the actions taken along the trajectory.
+
+\textbf{Data collection:} As discussed before, the dataset for perception can be collected off-line, while the dataset for control has to be collected in an on-line manner, since actions are actively involved in the learning process. This greatly limits the number of samples one can collect, since executing actions in the real world with real robotics systems is a relatively expensive procedure. In cases where the control policies are trained in simulation, the problem of the \textit{reality gap} arises when they are deployed in real-world scenarios, where the discrepancies between the modalities of the synthetic renderings and the real sensory readings impose major challenges.
