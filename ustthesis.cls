@@ -1814,7 +1814,7 @@ scholarly research.}
       \vglue 1ex
       {\normalsize the Degree of \@DegreeFName\par}
       \vglue 1ex
-      {\normalsize in the Department of \@subject\par}
+      {\normalsize in the Department of \@department\par}
      \vglue 13.2ex
 % Chan:
 %	Make changes according to the guidelines released on March 2001.

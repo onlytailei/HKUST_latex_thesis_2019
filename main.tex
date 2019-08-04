@@ -99,7 +99,6 @@
 % %% or
 % \degree{\PhD}              % Degree for which the thesis is.
 
-\subject{Electronic and Computer Engineering}       % Department to which the thesis
 \department{Electronic and Computer Engineering}       % Department to which the thesis
 
 \advisor{Prof.~Lei~LI}     % Supervisor.
@@ -116,7 +115,6 @@
 %   placed below the bottom margin.  However, if the author prefers
 %   the page number to be printed above the bottom margin, please
 %   activate the following command.
-
 % \PNumberAboveBottomMargin
 
 \graphicspath{{./figure/}}
@@ -149,6 +147,16 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                       %
+%     3) SIGNATURE                                                      %
+%                                                                       %
+% \signature and \endsignature defines the                              %
+% signature page of the Thesis especially for ece.                      %
+%                                                                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{chapter/signature}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                       %
 %     3) ACKNOWLEDGMENTS                                                %
 %                                                                       %
 % \acknowledgments and \endacknowledgments defines the                  %
@@ -156,7 +164,6 @@
 %                                                                       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{chapter/signature}
 \input{chapter/ack}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                       %
@@ -225,8 +232,9 @@
 \input{chapter/s1_obstacle_avoidance}
 
 
-\bookmarksetup{startatroot}% this is it
-\addtocontents{toc}{\bigskip}% perhaps as well
+% this is try to set the conlusion as the same level as the PART in bookmark list.
+\bookmarksetup{startatroot}
+\addtocontents{toc}{\bigskip}
 \input{chapter/s5_conclusion}
 
 % \showthe\font
@@ -264,28 +272,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                       %
-%     10) APPENDIX (If Any)                                              %
+%     10) APPENDIX (If Any)                                             %
 %                                                                       %
-% \part{APPENDICES}
+%                                                                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{chapter/s6_appendices}
-%                                                                       %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                                       %
-%     11) BIOGRAPHY (Optional)                                          %
-%                                                                       %
-% \biography
-% are used to define the optional          %
-% Biography of the author of the Thesis.                                %
-%         % \showthe\font                                                              %
-% and
-% \endbiography
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \biography
-% The biography of the student is ALSO optional.
-% \endbiography
 
 \end{document}
