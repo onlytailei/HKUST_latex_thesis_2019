@@ -1,4 +1,4 @@
-# HKUST Thesis template for PhD and MPhil, especially for ECE, 2019.
+# HKUST thesis latex template for PhD and MPhil, especially for ECE, 2019.
 
 This is the latex template for HKUST based on the [RPG HandBook](https://rpghandbook.ust.hk/appendices-guidelines-on-thesis-preparation). A sample page can be found at [here](http://pg.ust.hk/guides_n_forms/students/thesis_sample_page_phd.pdf).
 
