@@ -1,4 +1,4 @@
-TARGET=main
+TARGET=sample
 SOURCE=$(TARGET).tex
 
 latex:
