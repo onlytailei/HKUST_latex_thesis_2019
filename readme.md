@@ -9,7 +9,7 @@ Please choose your degree (PhD/MPhill) and uncomment the coadvisor line, if you 
 
 To compile the thesis:
 
-    make .
+    make
 
 
 References:
