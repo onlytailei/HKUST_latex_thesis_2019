@@ -6,7 +6,6 @@
 
 \documentclass{ustthesis}
 
-% \usepackage{mathpazo,
 \usepackage{amsmath, amssymb}
 % epsfig,enumerate,bbm,calc,color,ifthen,capt-of} % original was times, but I think it's ugly; we use the same as IEEE CompSoc
 \usepackage{algorithm}
@@ -27,15 +26,13 @@
 \usepackage{indentfirst}
 \usepackage{siunitx}
 \usepackage{changepage}
-% \usepackage{setspace}
-% \usepackage[a4paper, margin=25mm]{geometry}
 \usepackage[a4paper, margin=25mm,textheight=247mm,textwidth=145mm]{geometry}
 
 % Alan: begin the font trial
 % Euler for math | Palatino for rm | Helvetica for ss | Courier for tt
 % \renewcommand{\rmdefault}{ppl} % rm
 
-% Lei: rouphly 32 lines for 12pt font size and 1.5 line spacing
+% NOTE Lei: rouphly 32 lines for 12pt font size and 1.5 line spacing
 \linespread{1.05}
 
 % \usepackage[scaled]{helvet} % ss
@@ -97,7 +94,7 @@
 \title{Sample Title for HKUST Thesis}  % Title of the thesis.
 \author{Ming~XIAO}     % Author of the thesis.
 
-% NOTE: choose your degree
+% NOTE Lei: choose your degree
 \degree{\MPhil}             % Degree for which the thesis is.
 % %% or
 % \degree{\PhD}              % Degree for which the thesis is.
@@ -106,7 +103,7 @@
 
 \advisor{Prof.~Lei~LI}     % Supervisor.
 
-% NOTE: Uncomment this line if you have a co-supervisor
+% NOTE Lei: Uncomment this line if you have a co-supervisor
 % \coadvisor{Prof.~Mazi~Zhang}     % Co Supervisor.
 
 \depthead{Prof.~Meimei~Han}    % department head.
@@ -229,15 +226,17 @@
 \input{chapter/s0_introduction}
 
 % NOTE Lei:
-%    Normally we don't need part, but I used it in my thesis
+%    Normally we don't need PART, but I used it in my thesis.
 \part{From Supervisd Learning to Reinforcment Learning}
 \label{part1}
 \input{chapter/s1_obstacle_avoidance}
 
 
-% this is try to set the conlusion as the same level as the PART in bookmark list.
+% NOTE Lei:
+%   this is try to set the conlusion as the same level as the PART in bookmark list. Otherwise, in the bookmark list, chapter conlusion will be under the last PART automatically.
 \bookmarksetup{startatroot}
 \addtocontents{toc}{\bigskip}
+
 \input{chapter/s5_conclusion}
 
 % \showthe\font
