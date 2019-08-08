@@ -1,17 +1,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                       %
-% ustthesis_test.tex: A template file for usage with ustthesis.cls      %
+%              A template file for usage with ustthesis.cls             %
 %                                                                       %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass{ustthesis}
 
 \usepackage{amsmath, amssymb}
-% epsfig,enumerate,bbm,calc,color,ifthen,capt-of} % original was times, but I think it's ugly; we use the same as IEEE CompSoc
 \usepackage{algorithm}
-% \usepackage[noend]{algorithmic}
 \usepackage{algorithmic}
-% \usepackage[center]{subfigure}
 \usepackage{color,graphicx}
 \usepackage{siunitx}
 \usepackage{soul}
@@ -26,7 +23,7 @@
 \usepackage{indentfirst}
 \usepackage{siunitx}
 \usepackage{changepage}
-\usepackage[a4paper, margin=25mm,textheight=247mm,textwidth=145mm]{geometry}
+\usepackage[a4paper, margin=25mm,textheight=247mm,textwidth=145mm]{geometry} % page requriement from the university ---added by Lei.
 
 % Alan: begin the font trial
 % Euler for math | Palatino for rm | Helvetica for ss | Courier for tt
@@ -37,7 +34,7 @@
 
 % \usepackage[scaled]{helvet} % ss
 % \usepackage{courier} % tt
-%\usepackage{euler} % math
+% \usepackage{euler} % math
 % \usepackage{eulervm} % a better implementation of the euler package (not in gwTeX)
 % \normalfont
 % \usepackage[T1]{fontenc}
@@ -50,6 +47,7 @@
 \newcommand{\red}[1]{#1}
 \newcommand{\tab}[1]{\hspace{3mm}}
 
+% NOTE Lei: personal habit for math symbols.
 \newcommand{\bx}{\mathbf{x}}
 \newcommand{\bX}{\mathbf{X}}
 \newcommand{\by}{\mathbf{y}}
@@ -73,7 +71,7 @@
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \DeclareMathOperator{\atantwo}{atan2}
 \newcommand{\argminE}{\mathop{\mathrm{argmin}}}
-% \newcommand\thelinespace{\expandafter\string\the\baselinestretch}
+
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
 
@@ -103,12 +101,12 @@
 
 \advisor{Prof.~Lei~LI}     % Supervisor.
 
-% NOTE Lei: Uncomment this line if you have a co-supervisor
+% NOTE Lei: Uncomment this line if you have a co-supervisor/co-advisor
 % \coadvisor{Prof.~Mazi~Zhang}     % Co Supervisor.
 
 \depthead{Prof.~Meimei~Han}    % department head.
 
-\defencedate{2019}{08}{05}      % \defencedate{year}{month}{day}.
+\defencedate{2019}{08}{05}      % \defencedate{year}{month}{day}   NOTE Lei: change it to the submission month when you submit your final version.
 
 % NOTE:
 %   According to the sample shown in the guidelines, page number is
@@ -269,8 +267,6 @@
 \bibliographystyle{plain}
 
 \bibliography{ref}
-% Please run "bibtex ustthesis_test" before the bibliography can be
-% included.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                       %
