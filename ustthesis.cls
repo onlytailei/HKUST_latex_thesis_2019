@@ -712,7 +712,7 @@ scholarly research.}
     \parskip=0pt
 % Chan:
 %	Add certain vertical space before the title.
-    \TOffset
+    %\TOffset
     \begin{center}
       {\Lbi \expandafter{\@title} \par}
       \vglue 4ex
@@ -720,7 +720,7 @@ scholarly research.}
 %	Make changes according to the guidelines released on March 2001.
 %      {\lbi BY \par}
 %      \vglue 4ex
-      {by \expandafter{\@author} \par}
+      {\lbi by \expandafter{\@author}  \par Advisor:\expandafter{\@advisor} \par}
       \vglue 4ex
 %% Chan:
 %%	Make changes according to the guidelines released on March 2001.

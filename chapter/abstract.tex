@@ -1,13 +1,23 @@
 \begin{abstract}
-
-Every copy of the thesis must have an English abstract. Abstracts must provide a concise summary of the thesis in \textbf{300 words or less}.
-
-Theses should be written in English. Students in the School of Humanities and Social Science who are pursuing research work in the areas of Chinese Studies, and who can demonstrate a need to use Chinese to write their theses should seek prior approval from the School via their thesis supervisor and the divisional head. If approval is granted, students are also required to produce a translation of the title page, authorization page, signature page, table of contents and the abstract of thesis in English.
-
-(1)A thesis should be presented in a permanent and legible form either in original typescript, or a comparably permanent process.
-(2)Paper and print quality are vitally important for legibility. Normally, international size A4 (297mm x 210mm) 80 to 90 gsm woodfree white paper of good quality should be used for the thesis. Exceptionally, paper other than international A4 size may be used when the nature of the thesis requires it. Any thesis not typed or printed on the correct size of paper will not be accepted.
-(3)The final thesis copies should be printed on both sides of the paper.
-(4)A conventional font, size 12-point, 10 to 12 characters per inch must be used. One-and-a-half line spacing should be used throughout the thesis, except for abstracts, indented quotations or footnotes where single line spacing may be used.
-(4)All margins should be consistently 25mm (or at a maximum of 30mm) in width. The same margins should be used throughout a thesis. Exceptionally, margins of a different size may be used when the nature of the thesis requires it.
-
+For autonomous robot navigation, vision-based system can be easily deployed with 
+inexpensive commercial cameras, especially for monocular visual navigation system. 
+However, visual sensors are sensitive to environmental changes caused by lighting, object movement, weathers and seasons.
+For both indoor and outdoor autnomous navigation, the changes over time can lead to poor localization
+and deterioration in map quality. This may lead to a significant drop on robustness, especially for tasks involving repeated traversals such as autnomous path following, i.e. visual teach and repeat task.
+To enable long-term autonomous navigation system, the robustness of the system is a must.
+While extensive techniques are proposed to strengthen the robustness of localization
+through image retrieval or deep-trained image features that are invariant to appearance changes and viewing angle.
+They demonstrate impressive performance on changes caused by lighting condition variantion and seasonal changes, 
+while they rarely focus on the changes caused by object movement. This kind of changes are rather typical
+in situations such as parking lots, warehouses and offices. The movement can cause not only the appearance change,
+but also the infeasibility of the previous paths. In extreme condition, object movement may lead to the
+number of features to be insufficient, thus the localization fails.
+Besides, localization and mapping are tightly-coupled, however, current researchs lack of an emphasis 
+on map managment and update for long-term navigation tasks.
+Therefore, this proposal focus on the long-term navigation system enabled by visual sensors and targets on
+test and improve the localization robustness under environmental changes aroused by object movements.
+Moreover, the corresponding map maintance algorithms aiming at record and update the surrounding changes is 
+proposed as an important research direction. With the robustness improvement on localization and
+mapping under changing environments, the long-term autnomous navigation tasks e.g. autonomous route following,
+should be achieved.
 \end{abstract}
