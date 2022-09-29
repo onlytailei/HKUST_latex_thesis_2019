@@ -7,14 +7,26 @@ For industrial robots, the operation environment is usually structural constrain
 and fixed with various of customized assiting module such as using pre-installed 
 external marker system to assist localization. 
 Therefore, the industrial environment is barely changed with high stability, 
-while for other scopes of applications (e.g. autonomous driving, warehouse robots,
+while for other demanding scopes of applications (e.g. autonomous driving, warehouse robots,
 and service robots), the operational surrounding changes significantly with high dynamics
 and uncertainties. This highlights the key focus on robustness and reliability under
-changing environments for the spread of autonomous mobile robots. 
+changing environments for the wide spread of autonomous mobile robots. 
 
-A mobile robot navigation system consists of a perception module, a path planning module, and a control module.
-A perception module is responsible for scene understanding which may contain localization, mapping as well as 
-object detection. For a perception module, the sensor can be visual sensors, 
+Comparing to 3D laser scanner, also know as Light detection and ranging (LiDAR), 
+visual sensors (mostly referred to cameras) are cheaper and able to provide rich
+texture information, which is more suitable for high level interactive tasks such
+as mobile manipulation, human robot interaction. Cameras are also light-weight which enables massive deployment on all kinds of robotic platform, e.g. on micro aerial 
+robotics, LiDARs are not suitable for its weight and size, as well as high drive power source requriement. Therefore, vision-based localization and mapping techniques are 
+important which can achieve comparable performance with much lower hardware requriements.
+
+This proposal focus on the vision-based long-term navigtaion tasks, which requires 
+high robustness. During the task completion, the robot might encounter environment with uncertainty, such as highly dynamic objects (human, vehicles and other operating robots), moderately dynamic objects (boxes, bins and chairs), static objects but could be changed or moved (fences, wall and trees). This uncertain of surrounding changes 
+can lead to the failure of localization and inaccuracy of the map. Without doubt, localization of robot is the fundermental problem which other operations relies on.
+Regarding the map accuracy, the incremental changes and possible loss of localization, makes it important to maintaince an up-to-date map. Moreover, the discovery of human's memory system shows the mechanism behind an incrementally and continuously learning system. The human memory system contains temporal memory as well as long-term memory. Current research seldom tackles this problem while mostly focus on the temporal navigation and assume the environment to be static. 
+\cite{yin2022bioslam}
+
+for human perception 
+of a scene, there might be multiple layer of memory. For example, people tends to remeber the scene appearance with 
 
 
 Visual sensors, normally referred to monocular camera, stereo camera and RGB-D camera. 
@@ -27,20 +39,3 @@ current research focus, deep learning, vo
 
 \section{Related Work}
 
-
-
-Intelligent robots are influencing many aspects of the world nowadays, from collaborative robot arms in factories to L4 autonomous driving technology, from biped household robots to quadruped mobile military agents, and from unmanned surface vehicles to quadrotor swarms. The more deeply we imagine the future, the more indispensable we find robot services.
-
-For mobile robots, navigation is always the kernel function. However, compared with the automation of manipulation, mobile robot navigation is evolving more slowly. In the classical manipulation and manufacturing scenarios, the workspace of robots is usually well defined, and the robots can perform correctly under human-designed programming, without any interaction between uncertain objects and themselves. If we regard \textit{replacing the repetitive workloads} as the first step, we should start to consider \textit{living with the robot} in the next step. For mobile robots, to be incorporated into human's daily life, they must be intelligent in unknown and pedestrian-rich environments for tasks like autonomous driving, cargo delivers and household mobile robots, which is \textit{behaving like a human}.
-
-Human beings can navigate in crowded environments smartly without dependence on pre-defined high-resolution maps. We can also explore unknown environments without taking time to think about the information gain or frontiers. To navigate safely and efficiently like a human being, mobile robots should be able to perceive and predict behaviours of unfamiliar and dynamic agents. Based on the implicit or explicit understanding, an accessible policy considering various constraints is needed to guide the robots.
-
-
-Deep learning, as a solution for artificial intelligence, is capable of building progressively meaningful feature abstraction of input data.
-It plays an essential role in various fields of study \cite{Goodfellow-et-al-2016}, bringing the state of the art in image classification \cite{he2016deep,huang2017densely, krizhevsky2012imagenet},
-semantic segmentation \cite{chen2016deeplab, long2015fully},
-human-level game playing \cite{mnih2016asynchronous, mnih2015human}, driving real robotic systems in navigation \cite{tai2017virtual, zhang2017deep, zhu2017target}
-and manipulation \cite{levine2016end,yu2018one} tasks.
-
-We may be witnessing the most rapidly growing trend of deep learning techniques for robotics tasks in recent years.
-Replacing hand-crafted features with learned hierarchical distributed deep features, and learning control policies directly from high-dimensional sensory inputs, the robotics community is making substantial progress towards building fully autonomous intelligent systems.
