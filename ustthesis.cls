@@ -97,7 +97,7 @@
 \typeout{This class file is adapted from `ustthesis.sty' v1.3 (for LaTeX 2.09).}
 %\typeout{Please report any problems to cssystem@cs.ust.hk}
 \typeout{Please report any problems to kchan@cs.ust.hk}
-\PassOptionsToClass{12pt,oneside}{report}
+\PassOptionsToClass{12pt,oneside,}{report}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions
 \LoadClass{report}[1995/12/20 v1.3q Standard LaTeX document class]
@@ -720,7 +720,7 @@ scholarly research.}
 %	Make changes according to the guidelines released on March 2001.
 %      {\lbi BY \par}
 %      \vglue 4ex
-      {\lbi by \expandafter{\@author}  \par Advisor:\expandafter{\@advisor} \par}
+      {\lbi by \expandafter{\@author}  \par Supervisor:\expandafter{\@advisor} \par}
       \vglue 4ex
 %% Chan:
 %%	Make changes according to the guidelines released on March 2001.
@@ -983,7 +983,8 @@ scholarly research.}
   \setcounter{chapter}{0}
   \setcounter{section}{0}
   \def\@chapapp{APPENDIX}
-  \def\thechapter{\Alph{chapter}}}
+  % \def\thechapter{\Alph{chapter}}
+  }
 
 \def\endappendix{
 	\textspaceundo
