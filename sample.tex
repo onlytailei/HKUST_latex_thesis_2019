@@ -14,7 +14,7 @@
 \usepackage{soul}
 \usepackage{graphics} % for pdf, bitmapped graphics files
 \usepackage{subcaption}
-\newtheorem{proof}{Proof}
+% \newtheorem{proof}{Proof}
 \usepackage{bookmark}
 \usepackage{hyperref} % for better viewing experience  -- added by alan
 \usepackage{textcomp}
@@ -25,103 +25,28 @@
 \usepackage{changepage}
 \usepackage[a4paper, margin=1in]{geometry} % page requriement from the university ---added by Lei.
 \usepackage{setspace}
-% Alan: begin the font trial
-% Euler for math | Palatino for rm | Helvetica for ss | Courier for tt
-% \renewcommand{\rmdefault}{ppl} % rm
 
-% NOTE Lei: rouphly 32 lines for 12pt font size and 1.5 line spacing
-% \linespread{0.5}
 \singlespacing
-% \onehalfspacing
-%\doublespacing
-
-% \usepackage[scaled]{helvet} % ss
-% \usepackage{courier} % tt
-% \usepackage{euler} % math
-% \usepackage{eulervm} % a better implementation of the euler package (not in gwTeX)
-% \normalfont
-% \usepackage[T1]{fontenc}
-% Alan: end the font trial
-
-
-\DeclareMathOperator*{\argmax}{\arg\!\max}
-\DeclareMathOperator*{\argmin}{\arg\!\min}
-
-\newcommand{\red}[1]{#1}
-\newcommand{\tab}[1]{\hspace{3mm}}
-
-% NOTE Lei: personal habit for math symbols.
-\newcommand{\bx}{\mathbf{x}}
-\newcommand{\bX}{\mathbf{X}}
-\newcommand{\by}{\mathbf{y}}
-\newcommand{\bY}{\mathbf{Y}}
-\newcommand{\bD}{\mathbf{D}}
-\newcommand{\bE}{\mathbf{E}}
-\newcommand{\ba}{\mathbf{a}}
-\newcommand{\bs}{\mathbf{s}}
-\newcommand{\bn}{\mathbf{n}}
-\newcommand{\bI}{\mathbf{I}}
-\newcommand{\bsigma}{\mathbf{\sigma}}
-\newcommand{\cS}{\mathcal{S}}
-\newcommand{\cX}{\mathcal{X}}
-\newcommand{\cA}{\mathcal{A}}
-\newcommand{\cB}{\mathcal{B}}
-\newcommand{\cD}{\mathcal{D}}
-\newcommand{\bu}{\mathbf{u}}
-\newcommand{\bv}{\mathbf{v}}
-\newcommand{\ts}{\textsuperscript}
-\newcommand{\etal}{{\em et al.}}
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
-\DeclareMathOperator{\atantwo}{atan2}
-\newcommand{\argminE}{\mathop{\mathrm{argmin}}}
 
 \setcounter{tocdepth}{3}
 \setcounter{secnumdepth}{3}
 
-% \renewcommand{\familydefault}{\rmdefault}
-
-% \usepackage{latexsym}
-    % Use the "latexsym" package when encountering the following error:
-    %   ! LaTeX Error: Command \??? not provided in base LaTeX2e.
-% \usepackage{epsf}
-    % Use the "epsf" package for including EPS files.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                                       %
-% Preambles. DO NOT ERASE THEM. Change to suite your particular purpose.%
-%                                                                       %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+% PQE Report title
 \title{Vision-Based Localization and Map Update for Long-Term Navigation in Changing Environments}  % Title of the thesis.
-\author{Jingwen~YU}     % Author of the thesis.
-
-% NOTE Lei: choose your degree
-% \degree{\MPhil}             % Degree for which the thesis is.
-% %% or
-% \degree{\PhD}              % Degree for which the thesis is.
-
-\department{Electronic and Computer Engineering}       % Department to which the thesis
-
-\advisor{~Prof.~Ming~LIU}     % Supervisor.
-
-% NOTE Lei: Uncomment this line if you have a co-supervisor/co-advisor
-\coadvisor{~Prof.~Hong~Zhang}     % Co Supervisor.
-
-% \depthead{Prof.~Meimei~Han}    % department head.
-
-%\defencedate{2019}{08}{05}      % \defencedate{year}{month}{day}   NOTE Lei: change it to the submission month when you submit your final version.
-
-% NOTE:
-%   According to the sample shown in the guidelines, page number is
-%   placed below the bottom margin.  However, if the author prefers
-%   the page number to be printed above the bottom margin, please
-%   activate the following command.
-% \PNumberAboveBottomMargin
-
-\graphicspath{{./figure/}}
+% Author of the report
+\author{Jingwen~YU}    
+% Department to which the thesis
+\department{Electronic and Computer Engineering} 
+% Supervisor.
+\advisor{~Prof.~Ming~LIU}     
+% NOTE Jingwen: Uncomment/comment this line if you have/don't have a co-supervisor/co-advisor
+% Co-Supervisor.
+\coadvisor{~Prof.~Hong~Zhang}     
+% Set figure root path
+\graphicspath{{./figure/pqe}}
 \begin{document}
 
-% abstract of the report
+% abstract of the report, which also contain the title and authors
 \input{chapter/abstract}
 % chapter 1, introduction with background, related work 
 \input{chapter/introduction.tex}
