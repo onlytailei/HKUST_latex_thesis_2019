@@ -635,55 +635,55 @@
 % Chan:
 %	Make changes according to the guidelines released on March 2001.
 %	"Authorsation" is changed to "Authorization" instead.
-\def\authorise{
-%	\pchapter{Authorisation}
-%        \addcontentsline{toc}{chapter}{Authorisation Page}
-        \addcontentsline{toc}{chapter}{Authorization Page}
-% Chan:
-%	Add some vertical space.
-	\mbox{} \vspace{1cm}
-	\begin{center}
-%	    \underline{\Lbi Authorisation}
-	    \underline{\Lbi Authorization}
-	\end{center}
-	\vspace{1cm}
-	\textspace
-	\mbox{}
-	\par\indent
-	{I hereby declare that I am the sole author of the thesis.}
-	\par\vspace{1cm}
-	\indent
-%	{I authorise The Hong Kong University of Science and Technology to lend
-	{I authorize the Hong Kong University of Science and Technology to lend
-this thesis to other institutions or individuals for the purpose of scholarly
-research.}
-% Chan:
-%	Keep each paragraph with equal distance.
-%	\par\vspace{6cm}
-	\par\vspace{1cm}
-	\indent
-%	{I further authorise The Hong Kong University of Science and Technology
-	{I further authorize the Hong Kong University of Science and Technology
-to reproduce the thesis by photocopying or by other means, in total or in part,
-at the request of other institutions or individuals for the purpose of
-scholarly research.}
-% Chan:
-%	Add a signature part for the candidate.
-	\par\vspace{4cm}
-        \begin{center}
-          \candidate{\@author}
-          {\normalsize \space\mon\space\number\year}
-        \end{center}
-	\textspaceundo
-%	\typeout{Authorisation Page}
-	\typeout{Authorization Page}
-	\newpage
-}
+% \def\authorise{
+% %	\pchapter{Authorisation}
+% %        \addcontentsline{toc}{chapter}{Authorisation Page}
+%         \addcontentsline{toc}{chapter}{Authorization Page}
+% % Chan:
+% %	Add some vertical space.
+% 	\mbox{} \vspace{1cm}
+% 	\begin{center}
+% %	    \underline{\Lbi Authorisation}
+% 	    \underline{\Lbi Authorization}
+% 	\end{center}
+% 	\vspace{1cm}
+% 	\textspace
+% 	\mbox{}
+% 	\par\indent
+% 	{I hereby declare that I am the sole author of the thesis.}
+% 	\par\vspace{1cm}
+% 	\indent
+% %	{I authorise The Hong Kong University of Science and Technology to lend
+% 	{I authorize the Hong Kong University of Science and Technology to lend
+% this thesis to other institutions or individuals for the purpose of scholarly
+% research.}
+% % Chan:
+% %	Keep each paragraph with equal distance.
+% %	\par\vspace{6cm}
+% 	\par\vspace{1cm}
+% 	\indent
+% %	{I further authorise The Hong Kong University of Science and Technology
+% 	{I further authorize the Hong Kong University of Science and Technology
+% to reproduce the thesis by photocopying or by other means, in total or in part,
+% at the request of other institutions or individuals for the purpose of
+% scholarly research.}
+% % Chan:
+% %	Add a signature part for the candidate.
+% 	\par\vspace{4cm}
+%         \begin{center}
+%           \candidate{\@author}
+%           {\normalsize \space\mon\space\number\year}
+%         \end{center}
+% 	\textspaceundo
+% %	\typeout{Authorisation Page}
+% 	\typeout{Authorization Page}
+% 	\newpage
+% }
 
 % Chan:
 %	Add a new definition \TOffset for the extra vertical space
 %	before the title.
-\def\TOffset{ \mbox{} \vglue 6ex }
+% \def\TOffset{ \mbox{} \vglue 6ex }
 
 % tuck 4/4/90:
 % Both abstract formats are acceptable to Duke,
@@ -720,7 +720,12 @@ scholarly research.}
 %	Make changes according to the guidelines released on March 2001.
 %      {\lbi BY \par}
 %      \vglue 4ex
-      {\lbi by \expandafter{\@author}  \par Supervisor:\expandafter{\@advisor} \par}
+      {\lbi by \expandafter{\@author}  \par Supervisor:\expandafter{\@advisor}}
+      % \vglue 4ex
+
+      \ifcoadvisordefined
+      {\lbi Co-Supervisor:\expandafter{\@coadvisor} \par}
+      \fi
       \vglue 4ex
 %% Chan:
 %%	Make changes according to the guidelines released on March 2001.
@@ -760,94 +765,94 @@ scholarly research.}
 %% quad spacing main chapters, use \endacknowledgements after body of acks.
 %\def\acknowledgements{
 % quad spacing main chapters, use \endacknowledgments after body of acks.
-\def\acknowledgments{
-% Chan:
-%	Set \acknowdefined to be true.
-  \acknowdefinedtrue
-%  \pchapter{Acknowledgements}
-  % \pchapter{Acknowledgments}
-    \begin{center}
-      {\Lbi Acknowledgments \par\par\normalsize}
-    \end{center}
-  \addcontentsline{toc}{chapter}{Acknowledgments}
-  \textspace
-}
+% \def\acknowledgments{
+% % Chan:
+% %	Set \acknowdefined to be true.
+%   \acknowdefinedtrue
+% %  \pchapter{Acknowledgements}
+%   % \pchapter{Acknowledgments}
+%     \begin{center}
+%       {\Lbi Acknowledgments \par\par\normalsize}
+%     \end{center}
+%   \addcontentsline{toc}{chapter}{Acknowledgments}
+%   \textspace
+% }
+% % dfk 4/1/91: added \par to force end of paragraph before undoing
+% % double spacing
+% %\def\endacknowledgements{
+% \def\endacknowledgments{
+%   \par\textspaceundo
+% }
+
+
+% \def\signature{
+%     \null
+%     \parskip=0pt
+%     \addcontentsline{toc}{chapter}{Signature Page}
+%     \typeout{Signature Page}
+
+%     \TOffset
+%     \begin{center}
+%       {\Lbi \expandafter{\@title} \par}
+
+%       \vglue 6ex
+%       {by \par}
+%       \vglue 2ex
+%       % {\lbi \uppercase{\@author} \par}
+%       {\expandafter{\@author} \par}
+%       \vglue 2ex
+
+%     {This is to certify that I have examined the above \@DegreeSName thesis} \\
+%     \vglue 1ex
+%     {and have found that it is complete and satisfactory in all respects,} \\
+%     \vglue 1ex
+%     {and that any and all revisions required by} \\
+%     \vglue 1ex
+%     {the thesis examination committee have been made.}
+% %    \begin{flushleft}
+%     \vglue 0ex plus 1fill
+% %    \parbox{0.75\textwidth}{
+%     \parbox{\maxmem}{
+% %      APPROVED:\par
+% %      \vglue 6ex
+%       {	% @membersprinted counts the number of committee members printed so far
+
+% 	  \vglue 5ex
+% 	  \raisebox{-8pt}[0pt][17pt]{\rule{\maxmem}{.5pt}}\par	% Print line.
+% 		\centering \@membera
+
+% 	  \vglue 5ex
+% 	  \raisebox{-8pt}[0pt][17pt]{\rule{\maxmem}{.5pt}}\par	% Print line.
+% 		\centering \@memberb
+
+%     \ifcoadvisordefined
+% 	  \vglue 5ex
+% 	  \raisebox{-8pt}[0pt][17pt]{\rule{\maxmem}{.5pt}}\par	% Print line.
+% 		\centering \@memberc
+%     \fi
+
+% 	  % \vglue 1ex
+
+%       }
+%     } \par
+%     \end{center}
+%     % \vglue -2ex
+
+%     \textspace
+
+%     % \newpage
+% }
 % dfk 4/1/91: added \par to force end of paragraph before undoing
 % double spacing
 %\def\endacknowledgements{
-\def\endacknowledgments{
-  \par\textspaceundo
-}
-
-
-\def\signature{
-    \null
-    \parskip=0pt
-    \addcontentsline{toc}{chapter}{Signature Page}
-    \typeout{Signature Page}
-
-    \TOffset
-    \begin{center}
-      {\Lbi \expandafter{\@title} \par}
-
-      \vglue 6ex
-      {by \par}
-      \vglue 2ex
-      % {\lbi \uppercase{\@author} \par}
-      {\expandafter{\@author} \par}
-      \vglue 2ex
-
-    {This is to certify that I have examined the above \@DegreeSName thesis} \\
-    \vglue 1ex
-    {and have found that it is complete and satisfactory in all respects,} \\
-    \vglue 1ex
-    {and that any and all revisions required by} \\
-    \vglue 1ex
-    {the thesis examination committee have been made.}
-%    \begin{flushleft}
-    \vglue 0ex plus 1fill
-%    \parbox{0.75\textwidth}{
-    \parbox{\maxmem}{
-%      APPROVED:\par
-%      \vglue 6ex
-      {	% @membersprinted counts the number of committee members printed so far
-
-	  \vglue 5ex
-	  \raisebox{-8pt}[0pt][17pt]{\rule{\maxmem}{.5pt}}\par	% Print line.
-		\centering \@membera
-
-	  \vglue 5ex
-	  \raisebox{-8pt}[0pt][17pt]{\rule{\maxmem}{.5pt}}\par	% Print line.
-		\centering \@memberb
-
-    \ifcoadvisordefined
-	  \vglue 5ex
-	  \raisebox{-8pt}[0pt][17pt]{\rule{\maxmem}{.5pt}}\par	% Print line.
-		\centering \@memberc
-    \fi
-
-	  % \vglue 1ex
-
-      }
-    } \par
-    \end{center}
-    % \vglue -2ex
-
-    \textspace
-
-    % \newpage
-}
-% dfk 4/1/91: added \par to force end of paragraph before undoing
-% double spacing
-%\def\endacknowledgements{
-\def\endsignature{
-    \par\textspaceundo
-		\begin{center}
-    {\normalsize Department of \@department\par}
-    {\normalsize \space\mon\space\number\year}
-    \end{center}
-    \newpage
-}
+% \def\endsignature{
+%     \par\textspaceundo
+% 		\begin{center}
+%     {\normalsize Department of \@department\par}
+%     {\normalsize \space\mon\space\number\year}
+%     \end{center}
+%     \newpage
+% }
 
 
 % BIOGRAPHY:
@@ -891,61 +896,61 @@ scholarly research.}
 % Chan:
 %	Add a new definition \CheckParts to check if the authors has
 %	included all essential parts.
-\def\CheckParts{
-  \addlinedefinedfalse
-  \iftitledefined \else
-    \typeout{}
-    \typeout{%
-      Warning: No title page.  \noexpand\maketitle should be included.
-    }
-    \addlinedefinedtrue
-  \fi
-  \ifacknowdefined \else
-    \typeout{}
-    \typeout{%
-      Warning: No acknowledgment page.
-    }
-    \addlinedefinedtrue
-  \fi
-  \iftocdefined \else
-    \typeout{}
-    \typeout{%
-      Warning: No table of contents.  \noexpand\tableofcontents should
-	be included.
-    }
-    \addlinedefinedtrue
-  \fi
-  \iflofdefined \else
-    \typeout{}
-    \typeout{%
-      Warning: No list of figures.  \noexpand\listoffigures should
-	be included.
-    }
-    \addlinedefinedtrue
-  \fi
-  \iflotdefined \else
-    \typeout{}
-    \typeout{%
-      Warning: No list of tables.  \noexpand\listoftables should
-	be included.
-    }
-    \addlinedefinedtrue
-  \fi
-  \ifabsdefined \else
-    \typeout{}
-    \typeout{%
-      Warning: No abstract.
-    }
-    \addlinedefinedtrue
-  \fi
-  \ifaddlinedefined
-    \typeout{}
-    \iferrordefined \else
-      \ShowSamplePath
-      \errordefinedtrue
-    \fi
-  \fi
-}
+% \def\CheckParts{
+%   \addlinedefinedfalse
+%   \iftitledefined \else
+%     \typeout{}
+%     \typeout{%
+%       Warning: No title page.  \noexpand\maketitle should be included.
+%     }
+%     \addlinedefinedtrue
+%   \fi
+%   \ifacknowdefined \else
+%     \typeout{}
+%     \typeout{%
+%       Warning: No acknowledgment page.
+%     }
+%     \addlinedefinedtrue
+%   \fi
+%   \iftocdefined \else
+%     \typeout{}
+%     \typeout{%
+%       Warning: No table of contents.  \noexpand\tableofcontents should
+% 	be included.
+%     }
+%     \addlinedefinedtrue
+%   \fi
+%   \iflofdefined \else
+%     \typeout{}
+%     \typeout{%
+%       Warning: No list of figures.  \noexpand\listoffigures should
+% 	be included.
+%     }
+%     \addlinedefinedtrue
+%   \fi
+%   \iflotdefined \else
+%     \typeout{}
+%     \typeout{%
+%       Warning: No list of tables.  \noexpand\listoftables should
+% 	be included.
+%     }
+%     \addlinedefinedtrue
+%   \fi
+%   \ifabsdefined \else
+%     \typeout{}
+%     \typeout{%
+%       Warning: No abstract.
+%     }
+%     \addlinedefinedtrue
+%   \fi
+%   \ifaddlinedefined
+%     \typeout{}
+%     \iferrordefined \else
+%       \ShowSamplePath
+%       \errordefinedtrue
+%     \fi
+%   \fi
+% }
 
 % CHAPTERS
 %
@@ -954,7 +959,7 @@ scholarly research.}
 % Chan:
   \bodydefinedtrue
   % Check if all the required parts are present.
-  \CheckParts
+  % \CheckParts
   \newpage
   \parskip 6pt plus 1 pt minus 1pt
   \textspace
@@ -983,7 +988,7 @@ scholarly research.}
   \setcounter{chapter}{0}
   \setcounter{section}{0}
   \def\@chapapp{APPENDIX}
-  % \def\thechapter{\Alph{chapter}}
+  \def\thechapter{\Alph{chapter}}
   }
 
 \def\endappendix{
@@ -1607,12 +1612,17 @@ scholarly research.}
 \advisor{??ADVISOR??}
 \advisordefinedfalse
 
+% \newif\ifadvisordefined
+% \def\coadvisor#1{\gdef\@coadvisor{#1} \coadvisordefinedtrue}
+% \coadvisor{??ADVISOR??}
+% \coadvisordefinedfalse
+
 % Chan:
 %     Add a new definition for the co-adviosr.
 \newif\ifcoadvisordefined
-% \def\coadvisor#1{\gdef\@coadvisor{#1} \coadvisordefinedtrue}
-% \coadvisor{??COADVISOR??}
-\def\coadvisor#1{\member{#1, Thesis Co-Supervisor} \coadvisordefinedtrue}
+\def\coadvisor#1{\gdef\@coadvisor{#1} \coadvisordefinedtrue}
+\coadvisor{??COADVISOR??}
+% \def\coadvisor#1{\member{#1} \coadvisordefinedtrue}
 \coadvisordefinedfalse
 
 % Set default values for department name, advisor name, and current year, and
@@ -1657,110 +1667,110 @@ scholarly research.}
 
 % @minmembers -- holds mimumum number of member macros needed.  It is set in
 % \maketitle.
-\newcounter{@minmembers}
+% \newcounter{@minmembers}
 
-% \member{member name} -- user macro to declare the name of a committee member.
-%	May be used up to 7 times.  Should not be used for advisor.
-\newcommand{\member}[1]{
-  \addtocounter{@members}{1}	% Inc. num of members to include this new one.
-  \ifcase\value{@members}
-    \typeout{Thesis format internal error.  Too few committee members.} \or
-    \typeout{Thesis format internal error.  Advisor left off committee.} \or
-    \newcommand{\@memberb}{\@member{#1}} \or
-    \newcommand{\@memberc}{\@member{#1}} \or
-    \newcommand{\@memberd}{\@member{#1}} \or
-    \newcommand{\@membere}{\@member{#1}} \or
-    \newcommand{\@memberf}{\@member{#1}} \or
-    \newcommand{\@memberg}{\@member{#1}} \or
-    \newcommand{\@memberh}{\@member{#1}}
-  \else
-    \typeout{Error using thesis format.  Too many committee members.}
-  \fi
+% % \member{member name} -- user macro to declare the name of a committee member.
+% %	May be used up to 7 times.  Should not be used for advisor.
+% \newcommand{\member}[1]{
+%   \addtocounter{@members}{1}	% Inc. num of members to include this new one.
+%   \ifcase\value{@members}
+%     \typeout{Thesis format internal error.  Too few committee members.} \or
+%     \typeout{Thesis format internal error.  Advisor left off committee.} \or
+%     \newcommand{\@memberb}{\@member{#1}} \or
+%     \newcommand{\@memberc}{\@member{#1}} \or
+%     \newcommand{\@memberd}{\@member{#1}} \or
+%     \newcommand{\@membere}{\@member{#1}} \or
+%     \newcommand{\@memberf}{\@member{#1}} \or
+%     \newcommand{\@memberg}{\@member{#1}} \or
+%     \newcommand{\@memberh}{\@member{#1}}
+%   \else
+%     \typeout{Error using thesis format.  Too many committee members.}
+%   \fi
 
-%
-% Works out the maximum length of member text. This is used to draw the
-% signature line for all members.
-%
+% %
+% % Works out the maximum length of member text. This is used to draw the
+% % signature line for all members.
+% %
 
-  \ifnum\value{@members} < 8
-    \settowidth{\currmem}{\uppercase\expandafter{#1}}
-    \ifdim\currmem > \maxmem
-      \setlength{\maxmem}{\currmem}
-    \fi
-  \fi
-}
+%   \ifnum\value{@members} < 8
+%     \settowidth{\currmem}{\uppercase\expandafter{#1}}
+%     \ifdim\currmem > \maxmem
+%       \setlength{\maxmem}{\currmem}
+%     \fi
+%   \fi
+% }
 
 % Chan:
 %	Add a new definition \ShowSamplePath to show the path where
 %	a sample file can be found.
-\def\ShowSamplePath{
-  \typeout{+-------------------------------------------------------------------}
-  \typeout{| For usage of the class, please refer to the following sample file:}
-%  \typeout{| /usr/local/share/texmf/tex/latex/local/ustthesis_test.tex}
-  \typeout{| /homes/kchan/pub/latex/ustthesis_test.tex}
-  \typeout{+-------------------------------------------------------------------}
-  \typeout{}
-}
+% \def\ShowSamplePath{
+%   \typeout{+-------------------------------------------------------------------}
+%   \typeout{| For usage of the class, please refer to the following sample file:}
+% %  \typeout{| /usr/local/share/texmf/tex/latex/local/ustthesis_test.tex}
+%   \typeout{| /homes/kchan/pub/latex/ustthesis_test.tex}
+%   \typeout{+-------------------------------------------------------------------}
+%   \typeout{}
+% }
 
 % Chan:
 %	Add a new definition \CheckDefinitions to check if all
 %	essential definitions exist.
-\def\CheckDefinitions{
-  \addlinedefinedfalse
-  \ifdegreedefined \else
-    \typeout{}
-    \typeout{%
-      Warning: \noexpand\degree{ \noexpand\MA or \noexpand\MSc or
-	\noexpand\MPhil or \noexpand\PhD} not yet defined.
-    }
-    \addlinedefinedtrue
-  \fi
-  \ifdeptdefined \else
-    \typeout{}
-    \typeout{%
-      Warning: \noexpand\department{Department Name} not yet defined.
-    }
-    \addlinedefinedtrue
-  \fi
-  \ifsubjectdefined \else
-    \typeout{}
-    \typeout{%
-      Warning: \noexpand\subject{Subject Name} not yet defined.
-    }
-    \addlinedefinedtrue
-  \fi
-  \ifadvisordefined \else
-    \typeout{}
-    \typeout{%
-      Warning: \noexpand\advisor{Prof. Name} not yet defined.
-    }
-    \addlinedefinedtrue
-  \fi
-  %   Check if \depthead and \defencedate have been defined.
-  \ifdheaddefined \else
-    \typeout{}
-    \typeout{%
-      Warning: \noexpand\depthead{Prof. Name} not yet defined.
-    }
-    \member{Prof. ???, Head of Department}
-    \addlinedefinedtrue
-  \fi
-  \ifdatedefined \else
-    \typeout{}
-    \typeout{%
-      Warning: \noexpand\defencedate{year}{month}{day} not yet defined.
-      Use \noexpand\today instead.
-    }
-    \addlinedefinedtrue
-  \fi
-  \ifaddlinedefined
-    \typeout{}
-    \iferrordefined \else
-      \ShowSamplePath
-      \errordefinedtrue
-    \fi
-  \fi
-}
+% \def\CheckDefinitions{
+%   \addlinedefinedfalse
+%   \ifdegreedefined \else
+%     \typeout{}
+%     \typeout{%
+%       Warning: \noexpand\degree{ \noexpand\MA or \noexpand\MSc or
+% 	\noexpand\MPhil or \noexpand\PhD} not yet defined.
+%     }
+%     \addlinedefinedtrue
+%   \fi
+%   \ifdeptdefined \else
+%     \typeout{}
+%     \typeout{%
+%       Warning: \noexpand\department{Department Name} not yet defined.
+%     }
+%     \addlinedefinedtrue
+%   \fi
+%   \ifsubjectdefined \else
+%     \typeout{}
+%     \typeout{%
+%       Warning: \noexpand\subject{Subject Name} not yet defined.
+%     }
+%     \addlinedefinedtrue
+%   \fi
+%   \ifadvisordefined \else
+%     \typeout{}
+%     \typeout{%
+%       Warning: \noexpand\advisor{Prof. Name} not yet defined.
+%     }
+%     \addlinedefinedtrue
+%   \fi
+%   %   Check if \depthead and \defencedate have been defined.
+%   \ifdheaddefined \else
+%     \typeout{}
+%     \typeout{%
+%       Warning: \noexpand\depthead{Prof. Name} not yet defined.
+%     }
+%     \member{Prof. ???, Head of Department}
+%     \addlinedefinedtrue
+%   \fi
+%   \ifdatedefined \else
+%     \typeout{}
+%     \typeout{%
+%       Warning: \noexpand\defencedate{year}{month}{day} not yet defined.
+%       Use \noexpand\today instead.
+%     }
+%     \addlinedefinedtrue
+%   \fi
+%   \ifaddlinedefined
+%     \typeout{}
+%     \iferrordefined \else
+%       \ShowSamplePath
+%       \errordefinedtrue
+%     \fi
+%   \fi
+% }
 
 %% -- Changed for the new style info 31 August 87 by CRM
 %%
@@ -1771,76 +1781,76 @@ scholarly research.}
 %% Changed by DFK 10/7/90 to put ABSTRACT at the top of the abstract
 %% title page, as well as ``(Computer Science)''.
 %%
-\def\maketitle{		% Define macro to print title page.
-% Chan:
-%	Check if all the definitions have been defined.
-  \CheckDefinitions
-  \titledefinedtrue
-  \typeout{Title page}
-  \begin{titlepage}
-    \textspace
-%    \let\footnotesize\small % Local definitions to make \thanks produce
-%    \let\footnoterule\relax % \normalsize footnotes with no separating rule.
-    \setcounter{page}{1}
-    \null
-    \parskip=0pt
-% Chan:
-%	Add certain vertical space before the title.
-    \TOffset
-    \begin{center}
-      % {\@title \par}
-      % {\Lbi \uppercase\expandafter{\@title} \par}
-      {\Lbi \@title \par}
-      % {\Lbi \@title \par}
-% Chan:
-%	Make changes according to the guidelines released on March 2001.
-%      \vglue 8ex
-%      {\lbi BY \par}
-%      \vglue 8ex
-      \vglue 20ex
-      % {\lbi by \par}
-      {by \par}
-      \vglue 4ex
-      {\lbi \expandafter{\@author} \par\par}
-% Chan:
-%	Make changes according to the guidelines released on March 2001.
-%      \vglue 8ex
-%      {\normalsize A Thesis Presented to \par}
-      \vglue 20ex
-      {\normalsize A Thesis Submitted to \par}
-      \vglue 1ex
-      {\normalsize The Hong Kong University of Science and Technology\par}
-      \vglue 1ex
-      {\normalsize in Partial Fulfillment of the Requirements for\par}
-      \vglue 1ex
-      {\normalsize the Degree of \@DegreeFName\par}
-      \vglue 1ex
-      {\normalsize in the Department of \@department\par}
-     \vglue 13.2ex
-% Chan:
-%	Make changes according to the guidelines released on March 2001.
-%      {\normalsize Hong Kong, \space\mon\space\number\year\par}
-      {\normalsize \space\mon\space\number\year, Hong Kong\par}
-      % \vglue 12ex plus 1fill
-      % {\normalsize \Copyright}
-    \end{center}
-    \addcontentsline{toc}{chapter}{Title Page}
-    \newpage
+% \def\maketitle{		% Define macro to print title page.
+% % Chan:
+% %	Check if all the definitions have been defined.
+%   \CheckDefinitions
+%   \titledefinedtrue
+%   \typeout{Title page}
+%   \begin{titlepage}
+%     \textspace
+% %    \let\footnotesize\small % Local definitions to make \thanks produce
+% %    \let\footnoterule\relax % \normalsize footnotes with no separating rule.
+%     \setcounter{page}{1}
+%     \null
+%     \parskip=0pt
+% % Chan:
+% %	Add certain vertical space before the title.
+%     \TOffset
+%     \begin{center}
+%       % {\@title \par}
+%       % {\Lbi \uppercase\expandafter{\@title} \par}
+%       {\Lbi \@title \par}
+%       % {\Lbi \@title \par}
+% % Chan:
+% %	Make changes according to the guidelines released on March 2001.
+% %      \vglue 8ex
+% %      {\lbi BY \par}
+% %      \vglue 8ex
+%       \vglue 20ex
+%       % {\lbi by \par}
+%       {by \par}
+%       \vglue 4ex
+%       {\lbi \expandafter{\@author} \par\par}
+% % Chan:
+% %	Make changes according to the guidelines released on March 2001.
+% %      \vglue 8ex
+% %      {\normalsize A Thesis Presented to \par}
+%       \vglue 20ex
+%       {\normalsize A Thesis Submitted to \par}
+%       \vglue 1ex
+%       {\normalsize The Hong Kong University of Science and Technology\par}
+%       \vglue 1ex
+%       {\normalsize in Partial Fulfillment of the Requirements for\par}
+%       \vglue 1ex
+%       {\normalsize the Degree of \@DegreeFName\par}
+%       \vglue 1ex
+%       {\normalsize in the Department of \@department\par}
+%      \vglue 13.2ex
+% % Chan:
+% %	Make changes according to the guidelines released on March 2001.
+% %      {\normalsize Hong Kong, \space\mon\space\number\year\par}
+%       {\normalsize \space\mon\space\number\year, Hong Kong\par}
+%       % \vglue 12ex plus 1fill
+%       % {\normalsize \Copyright}
+%     \end{center}
+%     \addcontentsline{toc}{chapter}{Title Page}
+%     \newpage
 
-% End of Page 1
+% % End of Page 1
 
-    \authorise
+%     \authorise
 
-% End of Page 2
-  \end{titlepage}
+% % End of Page 2
+%   \end{titlepage}
 
 %
 % End of TitlePage
 %
 
-  \setcounter{footnote}{0} % Footnotes start at zero again.
-  \let\maketitle\relax % only ONCE!?
-}
+%   \setcounter{footnote}{0} % Footnotes start at zero again.
+%   \let\maketitle\relax % only ONCE!?
+% }
 
 
 
@@ -1869,6 +1879,14 @@ scholarly research.}
       % {\lbi \@author \par}
 %      \vglue 6ex
       \vglue 4ex
+      {Supervisor \@adviosr \par}
+      
+      \vglue 4ex
+
+      \ifcoadvisordefined
+      {Co-Supervisor \@coadvisor \par}
+      \fi
+
 % Chan:
 %	Make changes according to the guidelines released on March 2001.
 %%      {\normalsize A Thesis Presented to \dotfill\par}
