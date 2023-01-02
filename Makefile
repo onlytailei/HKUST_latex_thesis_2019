@@ -8,7 +8,8 @@ bibtex:
 	bibtex $(TARGET)
 
 clean:
-	rm -f $(TARGET).aux $(TARGET).bbl $(TARGET).blg $(TARGET).log $(TARGET).out ${TARGET}.pdf ${TARGET}.lot ${TARGET}.lof ${TARGET}.toc ${TARGET}.dvi
+	rm -f $(TARGET).aux $(TARGET).bbl $(TARGET).blg $(TARGET).log $(TARGET).out ${TARGET}.pdf ${TARGET}.lot ${TARGET}.lof ${TARGET}.toc ${TARGET}.dvi \
+			$(TARGET).fdb_latexmk $(TARGET).synctex.gz
 
 distclean:clean
 	rm -f $(TARGET).pdf
