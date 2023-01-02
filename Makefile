@@ -9,7 +9,7 @@ bibtex:
 
 clean:
 	rm -f $(TARGET).aux $(TARGET).bbl $(TARGET).blg $(TARGET).log $(TARGET).out ${TARGET}.pdf ${TARGET}.lot ${TARGET}.lof ${TARGET}.toc ${TARGET}.dvi \
-			$(TARGET).fdb_latexmk $(TARGET).synctex.gz
+			$(TARGET).fdb_latexmk $(TARGET).synctex.gz $(TARGET).fls
 
 distclean:clean
 	rm -f $(TARGET).pdf
